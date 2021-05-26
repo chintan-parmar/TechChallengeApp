@@ -1,0 +1,14 @@
+[
+  {
+    "ParameterKey": "KeyName",
+    "ParameterValue": "servian"
+  },
+  {
+    "ParameterKey": "DBPassword",
+    "ParameterValue": "test1234"
+  },
+  {
+    "ParameterKey": "DBUsername",
+    "ParameterValue": "rdsdbsa"
+  }
+]
