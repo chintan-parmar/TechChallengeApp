@@ -187,7 +187,7 @@
             "files" : {
               "/home/ec2-user/servian/conf.toml" : {
                 "content" : { "Fn::Join" : ["", [
-                  
+
                   "  \"DbName\" = \"", { "Ref" : "DBName" }, "\"\n",
                   "  \"DbHost\" = \"", {"Fn::GetAtt" : ["DBInstance", "Endpoint.Address"]}, "\"\n",
                   "  \"DbUser\" = \"", { "Ref" : "DBUsername" }, "\"\n",
@@ -224,14 +224,14 @@
           "# Install packages\n",
           "/opt/aws/bin/cfn-init -s ", { "Ref" : "AWS::StackId" }, " -r LaunchConfig ",
           "    --region ", { "Ref" : "AWS::Region" }, " || error_exit 'Failed to run cfn-init'\n",
-		  
-		 
+
+
 		  "echo 'export GOROOT=/usr/lib/golang' >> /etc/profile\n",
 		  "echo 'export GOPATH=$HOME/go' >> /home/ec2-user/.bash_profile\n",
 		  "echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> /home/ec2-user/.bash_profile\n",
 		  "source /home/ec2-user/.bashrc\n",
-		  
-		  
+
+
           "# Configure and fire up the service\n",
 		  "# export GOCACHE=\"/tmp/.cache\"\n",
           "cd /home/ec2-user/servian\n",
@@ -297,7 +297,7 @@
   "Outputs" : {
     "WebsiteURL" : {
       "Value" : { "Fn::Join" : ["", ["http://", { "Fn::GetAtt" : [ "ElasticLoadBalancer", "DNSName" ]}]] },
-      "Description" : "URL for Tracks"
+      "Description" : "URL for Servian"
     }
   }
 }
